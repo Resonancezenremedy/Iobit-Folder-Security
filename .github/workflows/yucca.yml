@@ -1,0 +1,31 @@
+name: "phlox"
+run-name: "Jade"
+"on":
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  Basin:
+    permissions:
+      pages: write
+      contents: read
+      id-token: write
+    concurrency:
+      group: "YARROW"
+      cancel-in-progress: false
+    runs-on: ubuntu-22.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.nestle.outputs.page_url }}
+    steps:
+      - name: "QUINCY"
+        uses: actions/checkout@v6
+      - name: "mint"
+        uses: actions/configure-pages@v5
+      - name: "Balsam"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: "Saffronfield"
+        id: nestle
+        uses: actions/deploy-pages@v4
